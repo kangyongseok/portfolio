@@ -1,0 +1,45 @@
+@import '~include-media/dist/include-media';
+
+.form {
+    display: flex;
+    
+    
+    input {
+        outline: none;
+        border:none;
+        background: none;    
+        border-bottom:1px solid #22b8cf;
+        flex:1;
+        margin-right:1rem;
+        font-size:1.3rem;
+        padding:0.4rem;
+    }
+
+    .create-button {
+        background: #22b8cf;
+        color:white;
+        font-weight:600;
+        font-size:1rem;
+        border-radius: 3px;
+        padding:0.5rem 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background: #3bc9db;
+        }
+    }
+
+    @include media ("<425px") {
+        display: block;
+
+        input {
+            width:100%;
+            box-sizing: border-box;
+        }
+
+        .create-button {
+            margin-top:1rem;
+            text-align: center;
+        }
+    }
+}

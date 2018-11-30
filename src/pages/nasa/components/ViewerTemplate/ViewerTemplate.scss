@@ -1,0 +1,27 @@
+@import '~include-media/dist/include-media';
+
+.viewer-template {
+
+    header {
+        color:white;
+        font-weight:600;
+        align-items: center;
+        font-size: calc(10px + 2vh);
+        width:100%;
+        padding-top:7vh;
+        margin:auto;
+        text-align: center;
+
+        @include media("<tablet") {
+            font-size: 1.25rem;
+            }
+        }
+        
+        .viewer-wrapper {
+            position:relative;
+            width:100%;
+            height:calc(100vh - 15rem);
+        }
+
+        
+}

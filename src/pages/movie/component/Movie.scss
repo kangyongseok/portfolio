@@ -1,0 +1,51 @@
+@import '~include-media/dist/include-media';
+
+
+.movie-card {
+    display: flex;
+    background: white;
+    max-width:70vh;
+    max-height:311vh;
+    margin:7rem 1rem 1rem;
+    box-shadow: 5px 5px 20px #666666;
+
+    .movie-poster {
+        max-width: 50rem;
+    }
+
+    img {
+        position: relative;
+        top:-1.5rem;
+        left: 1rem;
+        width:20vh;
+        box-shadow: 3px 3px 20px 2px #666666;
+    }
+
+    .movie-text {
+        margin:1rem 1rem 1rem 2rem;
+
+        h1 {
+            font-weight:600;
+            font-size:1.5rem;
+        }
+
+        .movie-genre {
+            padding:1rem 0;
+            color:#cccccc;
+            
+            span {
+                margin-right:0.5rem;
+            }
+        }
+
+        .movie-synopsis {
+            color:#666666;
+            line-height: 1.5rem;
+            text-align: justify;
+        }
+    }
+
+    @include media("<500px") {
+        display: block;
+    }
+}

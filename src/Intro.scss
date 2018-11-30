@@ -1,0 +1,69 @@
+@import 'reset-css';
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Open+Sans');
+
+html, body, #root {
+  width:100%;
+  height:100%;
+  font-family: 'Open Sans', 'Noto Sans KR', sans-serif;
+}
+
+.Intro {
+  text-align: center;
+}
+
+.Intro-logo {
+  height: 40vmin;
+}
+
+.Intro-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  .click-btn {
+    position: absolute;    
+    top:-9vmin;
+  }
+
+  svg {
+    font-size: calc(10px + 4vmin);
+  }
+
+  p {
+    margin-bottom:30px;
+    width:100%;
+
+    img {
+      border:4px solid white;
+      border-radius: 50%;
+    }
+  }
+
+  div {
+    width:100%;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+  
+    li {
+      margin:0 1%;
+    }
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+
+
+
