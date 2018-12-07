@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { FaBloggerB, FaGithub, FaInstagram, FaFacebook, FaAlignJustify, FaExternalLinkAlt } from "react-icons/fa";
-import { Nasa, Todo, Movie } from '../pages/index';
+import { Nasa, Todo, Movie, Wedding } from '../pages/index';
 import Menu from  '../components/Menu';
 import './App.scss';
 
@@ -44,6 +44,7 @@ class App extends Component {
                         <Route exact path="/nasa" component={Nasa}/>
                         <Route exact path="/todo" component={Todo}/>
                         <Route exact path="/movie" component={Movie}/>
+                        <Route exact path="/wedding" component={Wedding}/>
                     </div>
                 </div>
             </>

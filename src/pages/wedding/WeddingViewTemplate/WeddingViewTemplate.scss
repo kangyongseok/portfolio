@@ -1,0 +1,41 @@
+.card-wrap {
+    width:40vh;
+    background: white;
+    margin:2rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+
+    img {
+        width:100%
+    }
+    
+}
+
+.card-contents {
+    margin:1rem;
+
+    .card-name {
+        margin: 1rem 0;
+        font-weight:600;
+    }
+
+    .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        font-size:0.8rem;
+    
+        span {
+            background: #f1f1f1;
+            color:#999999;
+            padding:0.5rem;
+            margin-right:0.3rem;
+            margin-bottom:0.3rem;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+.card-plus {
+    border:2px solid #cccccc;
+}
+
+

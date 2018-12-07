@@ -15,6 +15,7 @@ const Menu = ({onClick}) => {
                 <li><NavLink exact to="/nasa" activeStyle={activeStyle} onClick={onClick}>Nasa API</NavLink></li>
                 <li><NavLink exact to="/todo" activeStyle={activeStyle} onClick={onClick}>Todo App</NavLink></li>
                 <li><NavLink exact to="/movie" activeStyle={activeStyle} onClick={onClick}>Movie App</NavLink></li>
+                <li><NavLink exact to="/wedding" activeStyle={activeStyle} onClick={onClick}>Wedding CARD</NavLink></li>
             </ul>
         </>
     );

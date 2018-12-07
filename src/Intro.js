@@ -18,6 +18,7 @@ const browserHandler = {
 
 class Intro extends Component {
 
+
   render() {
     return (
       <div className="Intro">
