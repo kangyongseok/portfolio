@@ -1,37 +1,27 @@
 import React from 'react';
 import './WeddingViewTemplate.scss';
 
-const WeddingViewTemplate = ({ card }) => {
+const WeddingViewTemplate = ({ cards }) => {
     return (
-        <>
         <div className="card-wrap">
-            <WeddingViewImage img={card.img} alt={card.name} />
-            <WeddingViewContents name={card.name} tag={card.tag.map((tag, index) => <span key={index}>{tag}</span>)} />
+            {cards.map(card => <WeddingCard key={card.id} name={card.hallName} src={card.imgUrl} tag={card.tag} />)}
         </div>
-        </>
     );
 };
 
-const WeddingViewImage = ({ img, alt }) => {
-    return (
-        <>
-            <img src={img} alt={alt} />
-        </>
-    )
-}
 
-const WeddingViewContents = ({ name, tag }) => {
+const WeddingCard = ({ name, src, tag }) => {
     return (
-        <>
-            <div className="card-contents">
-                <h3 className="card-name">{name}</h3>
-                <div className="card-tags">
-                    {tag}
+        <div className="card" >
+            <img src={src} alt={name} />
+            <div className="card-text">
+                <h3>{name}</h3>
+                <div className="card-tag">
+                    {tag.map((tag, index) => <span key={index}>{tag}</span>)}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
-
 
 export default WeddingViewTemplate;
