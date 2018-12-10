@@ -1,47 +1,54 @@
-import React from 'react';
-import Modal from 'react-modal';
+import React, { Component } from 'react';
 import './WeddingCardPlus.scss';
-import { FaPlusCircle } from "react-icons/fa";
 
-class WeddingCardPlus extends React.Component {
-    constructor () {
-      super();
-      this.state = {
-        showModal: false,
-      };
-      
-      this.handleOpenModal = this.handleOpenModal.bind(this);
-      this.handleCloseModal = this.handleCloseModal.bind(this);
-    }
-    
-    handleOpenModal () {
-      this.setState({ showModal: true });
-    }
-    
-    handleCloseModal () {
-      this.setState({ showModal: false });
-    }
-    
-    render () {
-      return (
-        <div className="card-plus">
-          <button className="card-plus-btn" onClick={this.handleOpenModal}><FaPlusCircle /></button>
-          <Modal
-             isOpen={this.state.showModal}
-             contentLabel="Minimal Modal Example"
-             ariaHideApp={false}
-             className='card-modal'
-             overlayClassName="Overlay"
-          >
-            <h3>웨딩홀 정보 입력</h3>
-            <button className="card-modal-close" onClick={this.handleCloseModal}>Close Modal</button>
-          </Modal>
-        </div>
-      );
-    }
+class WeddingCardPlus extends Component {
+
+  state = {
+    hallName:'',
+    tag:[]
   }
 
 
+  handleChange = (e) => {
+      this.setState({
+        [e.target.name]: e.target.value,
+      })
+  }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.onCreate(this.state);
+    this.setState({
+      hallName:'',
+      tag:[],
+      imgUrl:''
+    })
+    
+  }
+
+ 
+  render() {
+    return (
+      <div className="card-plus">
+        <form onSubmit={this.handleSubmit}>
+          <p>Wedding Card Create : </p>
+          <input 
+            placeholder="hall name" 
+            name="hallName"
+            value={this.state.hallName} 
+            onChange={this.handleChange} 
+          />
+          <input 
+            placeholder="ex) tag1 tag2"
+            name="tag"
+            value={this.state.tag}
+            onChange={this.handleChange}
+          />
+          <button type="submit">등록</button>
+        </form>
+      </div>
+    );
+  }
+}
 
 export default WeddingCardPlus;
