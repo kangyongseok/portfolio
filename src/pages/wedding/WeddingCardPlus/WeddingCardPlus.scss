@@ -1,57 +1,41 @@
-.card-plus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border:2px solid #cccccc;
-    border-radius: 1rem;
-    width:40vh;
-    margin:2rem;
-    
-    
+@import '~include-media/dist/include-media';
 
-    &:hover {
-        border:2px solid #666666;
-        
+.card-plus {
+    width:100%;
+    height:3rem;
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .card-plus-btn {
-        border:none;
-        background: none;
-        width:100%;
-        height:100%;
-        cursor: pointer;
-        font-size:3rem;
-        color:#cccccc;
+    p {
+        font-weight:600;
+        font-size:1.5rem;
+    }
 
-        &:hover {
-            color:#666666;
+    input {
+        padding:0.3rem;
+        font-size:1rem;
+        margin:1rem;
+    }
+
+    button {
+        border:none;
+        background: #333333;
+        color:white;
+        padding:0.3rem 1rem;
+        font-size:1rem;
+    }
+
+    @include media('<400px') {
+
+        height:20rem;
+
+        form {
+            flex-direction: column;
         }
     }
-}
 
-.card-modal {
-    background: white;
-    width:100vh;
-    height:100%;
-    position: relative;
-    
-    .card-modal-close {
-        position: absolute;
-        right:2rem;
-        bottom:2rem;
-        cursor: pointer;
-    }
-}
-
-.Overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background: rgba(255, 255, 255, 0.5);
-    padding:2rem;
 }
