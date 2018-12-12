@@ -1,6 +1,7 @@
 @import '~include-media/dist/include-media';
 
 .viewer-template {
+    position: relative;
 
     header {
         color:white;
@@ -17,11 +18,19 @@
             }
         }
         
-        .viewer-wrapper {
-            position:relative;
-            width:100%;
-            height:calc(100vh - 15rem);
-        }
+    .viewer-wrapper {
+        position:relative;
+        width:100%;
+        height:calc(100vh - 15rem);
+    }
+    
+    .nasa-info {
+        position: absolute;
+        right:1rem;
+        top:1rem;
+        font-size:2rem;
+        cursor: pointer;
+    }
 
         
 }

@@ -3,6 +3,7 @@ import './base.scss';
 import ViewerTemplate from './components/ViewerTemplate/index';
 import SpaceNavigator from './components/SpaceNavigator/index';
 import Viewer from './components/Viewer/index';
+import Info from './components/Info';
 import moment from 'moment';
 
 import * as api from './lib/api';
@@ -22,7 +23,8 @@ class App extends Component {
         maxDate: null,
         date: null,
         url: null,
-        mediaType: null
+        mediaType: null,
+        modal:false
     }
 
     getAPOD = async (date) => {
@@ -82,14 +84,22 @@ class App extends Component {
         this.getAPOD();
     }
 
+    handleModal = () => {
+        const { modal } = this.state
+        this.setState({
+            modal: !modal
+        })
+    }
+
     render() {
-        const { url, mediaType, loading } = this.state;
-        const { handlePrev, handleNext } = this;
+        const { url, mediaType, loading, modal } = this.state;
+        const { handlePrev, handleNext, handleModal } = this;
         return (
             <div className="nasa-wrapper">
                 <ViewerTemplate 
                     spaceNavigator={<SpaceNavigator onPrev={handlePrev} onNext={handleNext} />} 
                     viewer={<Viewer url={url} mediaType={mediaType} loading={loading} />}
+                    info={<Info onClick={handleModal} modalSet={modal} />}
                 />
             </div>
         );
